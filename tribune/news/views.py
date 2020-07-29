@@ -42,7 +42,7 @@ def past_days_news(request, past_date):
 def search_results(request):
 
     if 'article' in request.GET and request.GET["article"]:
-        search_term = request.GET("article")
+        search_term = request.GET.get("article")
         searched_articles = Article.search_by_title(search_term)
         message = f'{search_term}'
 
